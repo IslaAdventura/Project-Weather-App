@@ -1,0 +1,17 @@
+body {
+  background-color: rgb(40, 6, 31);
+  color: aliceblue;
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 500px;
+  font-style: normal;
+}
+
+.weather-app {
+  background: gray;
+  border-radius: 15%;
+  box-shadow: 0 30px 50px rgb(68, 29, 57);
+  margin: 45px auto;
+  max-width: 600px;
+  padding: 30px;
+}
