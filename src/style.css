@@ -76,9 +76,9 @@ main {
 }
 
 .weather-app-icon {
-  font-size: 44px;
   margin-left: 10px;
-  margin-top: 22px;
+  margin-top: 20px;
+  width: 95px;
 }
 
 .weather-app-temperature {
