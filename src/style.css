@@ -94,12 +94,12 @@ main {
 .weather-forecast {
   display: flex;
   justify-content: space-around;
-  margin-top: 30px;
+  margin-top: 8px;
 }
 
 .weather-forecast-date {
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 18px;
   text-align: center;
 }
 
