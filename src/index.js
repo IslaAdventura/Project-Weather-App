@@ -16,6 +16,8 @@ function refreshWeather(response) {
   speedElement.innerHTML = `${response.data.wind.speed} mph`;
   timeElement.innerHTML = formatDate(date);
   icon.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -50,7 +52,15 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "dbbf0b0ffte4fa30oaa8d9a8aa2bc032";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
+  console.log(apiUrl);
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
   let days = ["Tue", "Wed", "Thurs", "Fri", "Sat"];
   let forecastHtml = "";
 
@@ -63,10 +73,10 @@ function displayForecast() {
             <div class="weather-forecast-icon">☀️</div>
             <div class="weather-forecast-temperatures">
               <div class="weather-forecast-temperature">
-                <strong>95°</strong>
-              </div>
-              <div class="weather-forecast-temperature"><br />85°</div>
+                <strong>95°</strong></div>
+              <div class="weather-forecast-temperature">85°</div>
             </div>
+          </div>
           </div>
           `;
   });
@@ -79,4 +89,3 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Sarasota");
-displayForecast();
