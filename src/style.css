@@ -62,14 +62,20 @@ main {
   line-height: 48px;
   margin: 0;
 }
+
+h2 {
+  margin-top: 5px;
+}
+
 .weather-app-details {
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 20px;
+  line-height: 22px;
+  margin-top: 4px;
 }
 
 .weather-app-details strong {
   color: rgb(248, 125, 10);
-  font-size: 22px;
+  font-size: 25px;
 }
 
 .weather-app-temperature-container {
