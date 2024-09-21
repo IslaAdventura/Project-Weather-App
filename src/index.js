@@ -22,7 +22,8 @@ function refreshWeather(response) {
 
 function formatDate(date) {
   let minutes = date.getMinutes();
-  let hours = date.getHours();
+  let hours = date.getHours() % 12 || 12;
+  let amPm = date.getHours() < 12 ? "am" : "pm";
   let days = [
     "Sunday",
     "Monday",
@@ -37,7 +38,7 @@ function formatDate(date) {
     minutes = `0${minutes}`;
   }
 
-  return `${day}, ${hours}:${minutes}${",  "}`;
+  return `${day}, ${hours}:${minutes} ${amPm}${",  "}`;
 }
 
 function searchCity(city) {
